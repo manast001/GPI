@@ -6,7 +6,6 @@ import javax.swing.JLabel;
 
 
 public class QuestionPanel extends JPanel {
-	private JTable question;
 
 	/**
 	 * Create the panel.
@@ -18,9 +17,9 @@ public class QuestionPanel extends JPanel {
 		nextButton.setBounds(536, 426, 89, 23);
 		add(nextButton);
 		
-		question = new JTable();
-		question.setBounds(12, 12, 607, 368);
-		add(question);
+		JLabel firstQuestionLabel = new JLabel("");
+		firstQuestionLabel.setBounds(145, 31, 70, 15);
+		add(firstQuestionLabel);
 
 	}
 }
