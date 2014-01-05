@@ -13,6 +13,5 @@
 	<classpathentry kind="lib" path="/home/manast/Repositorio/GPI/jfreechart/orsonpdf-1.3-eval.jar"/>
 	<classpathentry kind="lib" path="/home/manast/Repositorio/GPI/jfreechart/servlet.jar"/>
 	<classpathentry kind="lib" path="/home/manast/Repositorio/GPI/jfreechart/swtgraphics2d.jar"/>
-	<classpathentry kind="lib" path="forms-1.3.0.jar" sourcepath="forms-1.3.0-src.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
