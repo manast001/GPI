@@ -57,7 +57,7 @@ public class Interfaz {
 		lista.add(14);
 		lista.add(16);
 		lista.add(35);
-		cargo.addNewOperational(lista,(int) coincidenciaVendedor, opera.get(0));
+		cargo.addNewOperational(lista,coincidenciaVendedor, opera.get(0));
 		//programador
 		lista=new ArrayList<Integer>();
 		lista.add(1);
@@ -67,7 +67,7 @@ public class Interfaz {
 		lista.add(15);
 		lista.add(37);
 		lista.add(39);
-		cargo.addNewOperational(lista,(int) coincidenciaProgramador, opera.get(1));
+		cargo.addNewOperational(lista,coincidenciaProgramador, opera.get(1));
 		//Secretaria
 		lista=new ArrayList<Integer>();
 		lista.add(8);
@@ -78,7 +78,7 @@ public class Interfaz {
 		lista.add(38);
 		lista.add(35);
 		lista.add(39);
-		cargo.addNewOperational(lista,(int) coincidenciaSecretaria, opera.get(2));
+		cargo.addNewOperational(lista,coincidenciaSecretaria, opera.get(2));
 		//Recepcionista
 		lista=new ArrayList<Integer>();
 		lista.add(4);
@@ -88,7 +88,7 @@ public class Interfaz {
 		lista.add(14);
 		lista.add(16);
 		lista.add(39);
-		cargo.addNewOperational(lista,(int) coincidenciaRecepcionista, opera.get(3));
+		cargo.addNewOperational(lista,coincidenciaRecepcionista, opera.get(3));
 		//Bodega
 		lista=new ArrayList<Integer>();
 		lista.add(2);
@@ -97,7 +97,7 @@ public class Interfaz {
 		lista.add(34);
 		lista.add(39);
 		lista.add(35);
-		cargo.addNewOperational(lista,(int) coincidenciaBodega, opera.get(4));
+		cargo.addNewOperational(lista,coincidenciaBodega, opera.get(4));
 		//Guardia
 		lista=new ArrayList<Integer>();
 		lista.add(7);
@@ -109,7 +109,7 @@ public class Interfaz {
 		lista.add(39);
 		lista.add(35);
 		lista.add(38);
-		cargo.addNewOperational(lista,(int) coincidenciaGuardia, opera.get(5));
+		cargo.addNewOperational(lista,coincidenciaGuardia, opera.get(5));
 	}
 
 	/**
