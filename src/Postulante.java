@@ -70,4 +70,8 @@ public class Postulante {
 	public String getRol(){return this.rol;}
 	
 	public int getAge(){return Integer.parseInt(data.get(0).get(7));}
+	
+	public String getNivelComputacional(){return data.get(1).get(1);}
+	
+	public String getNivelEducacional(){return data.get(1).get(0);}
 }
