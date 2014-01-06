@@ -50,7 +50,7 @@ public class Interfaz {
 		this.insertPanel("Datos",(JPanel) new DataPanel());
 		
 		JButton btnComenzar = new JButton("Comenzar");
-		btnComenzar.setBounds(578, 525, 91, 23);
+		btnComenzar.setBounds(553, 530, 152, 23);
 		frame.getContentPane().add(btnComenzar);
 		this.insertPanel("Graficos",(JPanel) new GraphicsPanel());
 		this.insertPanel("Cuestionario",(JPanel) new QuestionXYPanel(new Postulante()));
@@ -61,13 +61,13 @@ public class Interfaz {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 685, 586);
+		frame.setBounds(100, 100, 721, 598);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		principalPanel = new JTabbedPane(JTabbedPane.TOP);
 		principalPanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		principalPanel.setBounds(6, 6, 663, 501);
+		principalPanel.setBounds(0, 0, 711, 514);
 		frame.getContentPane().add(principalPanel);
 	}
 	
