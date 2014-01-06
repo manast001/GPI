@@ -59,13 +59,15 @@ public class Postulante {
 		this.respuestas.clear();
 	}
 	
-	public int getX()
-	{
-		return (int)this.x;
-	}
+	public int getX(){return (int)this.x;}
 	
-	public int getY()
-	{
-		return (int)this.y;
-	}
+	public int getY(){return (int)this.y;}
+	
+	public List<Integer> getResponse(){return respuestas;}
+	
+	public void setRol(String rol){this.rol=rol;}
+	
+	public String getRol(){return this.rol;}
+	
+	public int getAge(){return Integer.parseInt(data.get(0).get(7));}
 }
