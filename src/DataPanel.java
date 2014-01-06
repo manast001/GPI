@@ -7,8 +7,12 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerDateModel;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
+import java.util.List;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.UIManager;
@@ -27,8 +31,13 @@ public class DataPanel extends JPanel {
 	private JTextField dataField_Name;
 	private JTextField dataField_SurnameM;
 	private JTextField dataField_SurnameP;
-
-
+	private JComboBox dataField_charge;
+	private JComboBox dataField_Computer;
+	private JComboBox dataField_Education;
+	private JSpinner dataField_age;
+	private JComboBox dataField_civilState;
+	private JSpinner dataField_sonsNumber;
+	private JSpinner dataField_Date;
 	/**
 	 * Create the panel.
 	 */
@@ -92,21 +101,29 @@ public class DataPanel extends JPanel {
 		dataField_SurnameM.setBounds(157, 104, 128, 20);
 		userDataPanel.add(dataField_SurnameM);
 		
-		JSpinner dataField_Date = new JSpinner();
+		dataField_Date = new JSpinner();
 		dataField_Date.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		dataField_Date.setModel(new SpinnerDateModel(new Date(1388718000000L), null, null, Calendar.DAY_OF_YEAR));
 		dataField_Date.setBounds(441, 26, 143, 20);
 		userDataPanel.add(dataField_Date);
 		
-		JSpinner dataField_sonsNumber = new JSpinner();
+		dataField_sonsNumber = new JSpinner();
 		dataField_sonsNumber.setModel(new SpinnerNumberModel(0, 0, 10, 1));
 		dataField_sonsNumber.setBounds(572, 53, 76, 20);
 		userDataPanel.add(dataField_sonsNumber);
 		
-		JComboBox dataField_civilState = new JComboBox();
+		dataField_civilState = new JComboBox();
 		dataField_civilState.setModel(new DefaultComboBoxModel(new String[] {"Soltero", "Casado", "Separado", "Divorciado", "Viudo"}));
 		dataField_civilState.setBounds(366, 50, 102, 25);
 		userDataPanel.add(dataField_civilState);
+		
+		JLabel lblEdad = new JLabel("Edad");
+		lblEdad.setBounds(303, 80, 86, 15);
+		userDataPanel.add(lblEdad);
+		
+		dataField_age = new JSpinner();
+		dataField_age.setBounds(392, 78, 76, 20);
+		userDataPanel.add(dataField_age);
 		
 		JPanel chargeDataPanel = new JPanel();
 		chargeDataPanel.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 255)), "Datos Profesionales", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -118,7 +135,7 @@ public class DataPanel extends JPanel {
 		educacionLabel.setBounds(12, 47, 155, 16);
 		chargeDataPanel.add(educacionLabel);
 		
-		JComboBox dataField_Education = new JComboBox();
+		dataField_Education = new JComboBox();
 		dataField_Education.setBounds(185, 46, 155, 20);
 		chargeDataPanel.add(dataField_Education);
 		dataField_Education.setModel(new DefaultComboBoxModel(new String[] {"Basica", "Media", "Superior"}));
@@ -127,7 +144,7 @@ public class DataPanel extends JPanel {
 		computacionPlz.setBounds(12, 81, 155, 15);
 		chargeDataPanel.add(computacionPlz);
 		
-		JComboBox dataField_Computer = new JComboBox();
+		dataField_Computer = new JComboBox();
 		dataField_Computer.setBounds(185, 78, 155, 20);
 		chargeDataPanel.add(dataField_Computer);
 		dataField_Computer.setModel(new DefaultComboBoxModel(new String[] {"Basico", "Medio", "Avanzado", "Experto"}));
@@ -136,11 +153,37 @@ public class DataPanel extends JPanel {
 		chargeLabel.setBounds(12, 117, 110, 16);
 		chargeDataPanel.add(chargeLabel);
 		
-		JComboBox dataField_charge = new JComboBox();
+		dataField_charge = new JComboBox();
 		dataField_charge.setModel(new DefaultComboBoxModel(new String[] {"Nuevo Postulante", "Cargo plz"}));
 		dataField_charge.setMaximumRowCount(20);
 		dataField_charge.setBounds(185, 113, 155, 25);
 		chargeDataPanel.add(dataField_charge);
 
+	}
+
+	public List<List<String>> getData()
+	{
+		List<String> data=new ArrayList<String>();
+		List<List<String>> datas=new ArrayList<List<String>>(); 
+		
+		data.add(this.dataField_Rut.getText());
+		data.add(this.dataField_Name.getText());
+		data.add(this.dataField_SurnameP.getText());
+		data.add(this.dataField_SurnameM.getText());
+		data.add(this.dataField_Date.getValue().toString());
+		data.add(this.dataField_civilState.getSelectedItem().toString());
+		data.add(this.dataField_sonsNumber.getValue().toString());
+		data.add(this.dataField_age.getValue().toString());
+		
+		datas.add(data);
+		data.clear();
+		
+		data.add(this.dataField_Education.getSelectedItem().toString());
+		data.add(this.dataField_Computer.getSelectedItem().toString());
+		data.add(this.dataField_charge.getSelectedItem().toString());
+		
+		datas.add(data);
+		data.clear();
+		return datas;
 	}
 }

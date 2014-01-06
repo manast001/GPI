@@ -16,7 +16,7 @@ public class Interfaz {
 	private JFrame frame;
 	private int seccion;
 	private Postulante postulante;
-	private JPanel panel_1;
+	public JTabbedPane tabbedPane;
 	/**
 	 * Launch the application.
 	 */
@@ -39,23 +39,16 @@ public class Interfaz {
 	public Interfaz() {
 		initialize();
 		
-		panel_1 = new JPanel();
-		panel_1.setBounds(0, 0, 717, 502);
-		frame.getContentPane().add(panel_1);
-		panel_1.setLayout(null);
-		
-		DataPanel dataPanel = new DataPanel();
-		dataPanel.setBounds(358, 5, 1, 1);
-		DataPanel dataPanel_1 = new DataPanel();
-		dataPanel_1.setBounds(0, 0, 717, 502);
-		panel_1.add((JPanel) dataPanel_1);
-		
 		JButton btnComenzar = new JButton("Comenzar");
 		btnComenzar.setBounds(553, 514, 152, 23);
-		btnComenzar.addActionListener(new ButtonListener(this.postulante,btnComenzar,this.seccion,this.panel_1));
+		btnComenzar.addActionListener(new ButtonListener(this.postulante,btnComenzar,this.seccion,this));
 		frame.getContentPane().add(btnComenzar);
 		
+		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(0, 0, 717, 484);
+		frame.getContentPane().add(tabbedPane);
 		
+		tabbedPane.addTab("Datos Iniciales",(JPanel) new DataPanel());
 	}
 	
 	/**
@@ -71,8 +64,6 @@ public class Interfaz {
 		
 		this.postulante=new Postulante();
 	}
-	
-	
 }
 
 

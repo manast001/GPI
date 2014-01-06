@@ -6,7 +6,9 @@ public class Postulante {
 	 */
 	private float x,y;
 	private List<Integer> respuestas;
-	public String rol;
+	private List<Integer> xyrespuestas;
+	private String rol;
+	private List<List<String>> data;
 	/*
 	 * Constructor
 	 */
@@ -20,6 +22,11 @@ public class Postulante {
 	/*
 	 * Metodos Publicos
 	 */
+	public void setData(List<List<String>> data)
+	{
+		this.data=data;
+	}
+	
 	public void addAnswerByIndex(Integer answer,int index)
 	{
 			this.respuestas.set(index, answer);
@@ -32,6 +39,7 @@ public class Postulante {
 			this.respuestas.add(new Integer(0));
 		}
 	}
+
 	public void caculateXY()
 	{
 		for(int i=0;i<this.respuestas.size();i++)
@@ -46,6 +54,9 @@ public class Postulante {
 		
 		this.x=(this.x/this.respuestas.size())*100;
 		this.y=(this.y/this.respuestas.size())*100;
+		
+		this.xyrespuestas=this.respuestas;
+		this.respuestas.clear();
 	}
 	
 	public int getX()
@@ -56,11 +67,5 @@ public class Postulante {
 	public int getY()
 	{
 		return (int)this.y;
-	}
-	
-	public String toString()
-	{
-		return respuestas.toString();
-		
 	}
 }
