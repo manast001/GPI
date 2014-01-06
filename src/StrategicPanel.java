@@ -1,5 +1,10 @@
 import java.awt.Component;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 
 public class StrategicPanel extends JPanel {
 
