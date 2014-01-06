@@ -1,4 +1,17 @@
 import java.awt.EventQueue;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.border.TitledBorder;
+import javax.swing.JButton;
+
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.RowSpec;
+import com.jgoodies.forms.factories.FormFactory;
 
 
 public class Interfaz {
@@ -321,3 +334,6 @@ public class Interfaz {
 		this.postulante=new Postulante();
 	}
 }
+
+
+	
