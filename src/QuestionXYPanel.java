@@ -133,7 +133,7 @@ public class QuestionXYPanel extends JPanel {
 		add(respuesta_4);
 		
 		respuesta_5 = new JComboBox();
-		respuesta_5.setFont(new Font("Arial", Font.PLAIN, 11));
+		respuesta_5.setFont(new Font("Dialog", Font.BOLD, 12));
 		respuesta_5.setModel(new DefaultComboBoxModel(new String[] {"Acepta de buena manera", "Le molesta que su superior le diga como reaizarla"}));
 		respuesta_4.addItemListener(new EventListener(4,postulante,respuesta_5));
 		respuesta_5.setBounds(321, 143, 374, 22);
@@ -160,7 +160,7 @@ public class QuestionXYPanel extends JPanel {
 		
 		respuesta_9 = new JComboBox();
 		respuesta_9.setFont(new Font("DejaVu Sans", respuesta_9.getFont().getStyle() & ~Font.BOLD, respuesta_9.getFont().getSize() - 2));
-		respuesta_9.setModel(new DefaultComboBoxModel(new String[] {"Espera a escuchar todas las ideas y que los dem\u00E1s decidan que es lo mejor", "Act\u00FAa como intermediario para que  el grupo pueda llegar a un acuerdo"}));
+		respuesta_9.setModel(new DefaultComboBoxModel(new String[] {"<html>Esperar a escuchar ideas y que los dem&aacute;s decidan que es lo mejor</html>", "Actúa como intermediario para que  el grupo pueda llegar a un acuerdo"}));
 		respuesta_9.addItemListener(new EventListener(8,postulante,respuesta_9));
 		respuesta_9.setBounds(321, 321, 374, 22);
 		add(respuesta_9);
