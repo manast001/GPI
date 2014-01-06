@@ -35,14 +35,15 @@ public class ButtonListener implements ActionListener {
 			
 			case 0:
 				this.button.setText("siguiente");
-				
-				this.frame.tabbedPane.addTab("Preguntas Iniciales",(JPanel) new QuestionXYPanel(this.postulante));
+				this.xyPanel=new QuestionXYPanel(this.postulante);
+				this.frame.tabbedPane.addTab("Preguntas Iniciales",(JPanel) xyPanel);
 				break;
 			case 1:
 				this.postulante.caculateXY();
 				
 				if(this.postulante.getY()>=80)
 				{
+					
 					this.frame.tabbedPane.addTab("Preguntas Finales",(JPanel) new StrategicPanel(this.postulante));
 				}else
 				{
