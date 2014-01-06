@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.TitledBorder;
 import javax.swing.JButton;
+
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
@@ -17,6 +18,7 @@ public class Interfaz {
 	private int seccion;
 	private Postulante postulante;
 	public JTabbedPane tabbedPane;
+	public DataPanel dPanel;
 	/**
 	 * Launch the application.
 	 */
@@ -48,6 +50,12 @@ public class Interfaz {
 		tabbedPane.setBounds(0, 0, 717, 484);
 		frame.getContentPane().add(tabbedPane);
 		
+		dPanel=new DataPanel();
+		tabbedPane.addTab("Datos Iniciales",(JPanel)dPanel);
+	}
+	public void reinicializate()
+	{
+		this.postulante=new Postulante();
 		tabbedPane.addTab("Datos Iniciales",(JPanel) new DataPanel());
 	}
 	
