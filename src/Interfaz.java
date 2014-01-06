@@ -1,16 +1,5 @@
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
-import javax.swing.border.TitledBorder;
-import javax.swing.JButton;
-
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
-import com.jgoodies.forms.factories.FormFactory;
-
 
 public class Interfaz {
 
@@ -19,6 +8,7 @@ public class Interfaz {
 	private Postulante postulante;
 	public JTabbedPane tabbedPane;
 	public DataPanel dPanel;
+	public Cargo cargo;
 	/**
 	 * Launch the application.
 	 */
@@ -300,12 +290,12 @@ public class Interfaz {
 		initialize();
 		
 		JButton btnComenzar = new JButton("Comenzar");
-		btnComenzar.setBounds(553, 514, 152, 23);
+		btnComenzar.setBounds(796, 761, 152, 23);
 		btnComenzar.addActionListener(new ButtonListener(this.postulante,btnComenzar,this.seccion,this));
 		frame.getContentPane().add(btnComenzar);
 		
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(0, 0, 717, 484);
+		tabbedPane.setBounds(0, 0, 948, 750);
 		frame.getContentPane().add(tabbedPane);
 		
 		dPanel=new DataPanel();
@@ -322,7 +312,7 @@ public class Interfaz {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 721, 598);
+		frame.setBounds(100, 100, 974, 833);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -331,6 +321,3 @@ public class Interfaz {
 		this.postulante=new Postulante();
 	}
 }
-
-
-	
