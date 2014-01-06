@@ -24,11 +24,13 @@ public class ButtonListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
+		this.frame.tabbedPane.remove(0);
 		switch(this.seccion)
 		{
+			
 			case 0:
 				this.button.setText("siguiente");
-				this.frame.tabbedPane.remove(0);
+				
 				this.frame.tabbedPane.addTab("Preguntas Iniciales",(JPanel) new QuestionXYPanel(this.postulante));
 				break;
 			case 1:
@@ -48,12 +50,21 @@ public class ButtonListener implements ActionListener {
 					}
 					
 				}
-				
+				this.button.setText("Finalizar");
 				break;
+			case 2:
+				this.frame.tabbedPane.addTab("Resultados Finales",new GraphicsPanel());
+				this.button.setText("Reiniciar");
+				break;
+				default:
+					this.button.setText("Reiniciar");
+					this.seccion=0;
+					
+					break;
 		}
 		
 		this.seccion++;
-		
+		this.frame.tabbedPane.addTab("Preguntas Iniciales",(JPanel) new QuestionXYPanel(this.postulante));
 		
 	}
 
