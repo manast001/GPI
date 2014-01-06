@@ -3,6 +3,8 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 
 public class TacticPanel extends JPanel {
@@ -14,10 +16,10 @@ public class TacticPanel extends JPanel {
 	public TacticPanel(Postulante postulante) {
 		this.postulante=postulante;
 		
-		JLabel lblAnteUna = new JLabel("1. Ante una exposici\u00F3n ud busca:");
+		JLabel lblAnteUna = new JLabel("<html>1. Ante una exposici&oacute;n ud busca:</html>");
 		lblAnteUna.setBounds(33, 38, 160, 14);
 		
-		JLabel lblConSus = new JLabel("2. Con sus compa\u00F1eros de trabajo, prefiere");
+		JLabel lblConSus = new JLabel("<html>2. Con sus compa&ntilde;eros de trabajo, prefiere</html>");
 		lblConSus.setBounds(33, 63, 210, 14);
 		setLayout(null);
 		add(lblAnteUna);
@@ -31,15 +33,15 @@ public class TacticPanel extends JPanel {
 		lblUstedAnte.setBounds(33, 112, 230, 14);
 		add(lblUstedAnte);
 		
-		JLabel lblEnUn_1 = new JLabel("5. En un grupo de trabajo, prefiere que el cumplimiento de las metas sea recompensado seg\u00FAn");
+		JLabel lblEnUn_1 = new JLabel("<html>5. En un grupo de trabajo, prefiere que el cumplimiento de las metas sea recompensado seg&uacute;n</html>");
 		lblEnUn_1.setBounds(33, 137, 477, 14);
 		add(lblEnUn_1);
 		
-		JLabel lblSSus = new JLabel("6. S\u00ED sus compa\u00F1eros planean realizar una actividad sindical en el trabajo");
+		JLabel lblSSus = new JLabel("<html>6. S&iacute; sus compa&ntilde;eros planean realizar una actividad sindical en el trabajo</html>");
 		lblSSus.setBounds(33, 160, 383, 14);
 		add(lblSSus);
 		
-		JLabel lblAUsted = new JLabel("7. A usted, le motiva m\u00E1s");
+		JLabel lblAUsted = new JLabel("<html>7. A usted, le motiva m&aacute;s</html>");
 		lblAUsted.setBounds(33, 185, 258, 14);
 		add(lblAUsted);
 		
@@ -51,11 +53,11 @@ public class TacticPanel extends JPanel {
 		lblAnteEl.setBounds(33, 235, 340, 14);
 		add(lblAnteEl);
 		
-		JLabel lblseSiente = new JLabel("10. \u00BFSe siente vagamente culpable, cuando descansa y no hace nada durante varias horas o varios d\u00EDas?");
+		JLabel lblseSiente = new JLabel("<html>10. &iquest siente vagamente culpable, cuando descansa y no hace nada durante varias horas o varios dias?</html>");
 		lblseSiente.setBounds(33, 260, 520, 14);
 		add(lblseSiente);
 		
-		JLabel lblEsMs = new JLabel("11. Es m\u00E1s dif\u00EDcil para usted");
+		JLabel lblEsMs = new JLabel("11. Es mas dificil para usted");
 		lblEsMs.setBounds(33, 288, 210, 14);
 		add(lblEsMs);
 		
@@ -63,32 +65,127 @@ public class TacticPanel extends JPanel {
 		lblEnUna.setBounds(33, 314, 109, 14);
 		add(lblEnUna);
 		
-		JLabel lblLeAtraen = new JLabel("13. Le atraen m\u00E1s la personas que");
+		JLabel lblLeAtraen = new JLabel("13. Le atraen mas la personas que");
 		lblLeAtraen.setBounds(33, 342, 179, 14);
 		add(lblLeAtraen);
 		
-		JLabel lblUstedPrefiere = new JLabel("14. Usted prefiere pensar m\u00E1s en");
+		JLabel lblUstedPrefiere = new JLabel("14. Usted prefiere pensar mas en");
 		lblUstedPrefiere.setBounds(33, 367, 210, 14);
 		add(lblUstedPrefiere);
 		
-		JLabel lblnecesitaDe = new JLabel("15. \u00BFNecesita de alg\u00FAn familiar, objeto o meta para motivarse?");
+		JLabel lblnecesitaDe = new JLabel("15.Necesita de algun familiar, objeto o meta para motivarse?");
 		lblnecesitaDe.setBounds(33, 392, 315, 14);
 		add(lblnecesitaDe);
 		
-		JLabel lblCuandoEn = new JLabel("16. Cuando en su casa el tel\u00E9fono suena, usted:");
+		JLabel lblCuandoEn = new JLabel("16. Cuando en su casa el telefono suena, usted:");
 		lblCuandoEn.setBounds(33, 417, 242, 14);
 		add(lblCuandoEn);
 		
-		JLabel lblhaDivagado = new JLabel("17. \u00BFHa divagado alguna vez con un plan de vida en el \u00E1mbito profesional?");
+		JLabel lblhaDivagado = new JLabel("17.Ha divagado alguna vez con un plan de vida en el ambito profesional?");
 		lblhaDivagado.setBounds(33, 442, 383, 14);
 		add(lblhaDivagado);
 		
-		JLabel lblseSiente_1 = new JLabel("18. \u00BFSe siente usted satisfecho con su actual trabajo?");
+		JLabel lblseSiente_1 = new JLabel("18. Se siente usted satisfecho con su actual trabajo?");
 		lblseSiente_1.setBounds(33, 467, 285, 14);
 		add(lblseSiente_1);
 		
 		JLabel lblUnCliente = new JLabel("19. Un cliente le solicita un servicio que usted puede cumplir en el momento");
 		lblUnCliente.setBounds(33, 492, 407, 14);
 		add(lblUnCliente);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"lograr que lo que se expone sea entendido por los asistentes", "generar impacto en los asistentes"}));
+		comboBox.setBounds(599, 35, 512, 20);
+		add(comboBox);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"establecer  relaciones puntualmente en relacion al desarrollo de las actividades", "establecer relaciones socialmente cercanas"}));
+		comboBox_1.setBounds(599, 60, 512, 20);
+		add(comboBox_1);
+		
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"asumir el control de las acciones del grupo", "<html>comprometer a los compa&ntilde;eros que asuman responsabilidades individuales</html>"}));
+		comboBox_2.setBounds(599, 85, 512, 20);
+		add(comboBox_2);
+		
+		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"se enfoca en las causas", "busca variables asociadas y las subdivide"}));
+		comboBox_3.setBounds(599, 109, 512, 20);
+		add(comboBox_3);
+		
+		JComboBox comboBox_4 = new JComboBox();
+		comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"mejor rendimiento individual", "previo acuerdo con su superior"}));
+		comboBox_4.setBounds(599, 134, 512, 20);
+		add(comboBox_4);
+		
+		JComboBox comboBox_5 = new JComboBox();
+		comboBox_5.setModel(new DefaultComboBoxModel(new String[] {"Participa de sus actividades laborales y luego si involucra en esta", "Participa y ayuda a coordinar los preparativos de esta"}));
+		comboBox_5.setBounds(599, 157, 512, 20);
+		add(comboBox_5);
+		
+		JComboBox comboBox_6 = new JComboBox();
+		comboBox_6.setModel(new DefaultComboBoxModel(new String[] {"que su trabajo logre aceptacion en las personas involucradas", "buscar soluciones que generen un cambio desde su perspectiva"}));
+		comboBox_6.setBounds(599, 182, 512, 20);
+		add(comboBox_6);
+		
+		JComboBox comboBox_7 = new JComboBox();
+		comboBox_7.setModel(new DefaultComboBoxModel(new String[] {"se retroalimenta del pasado", "augura los posibles escenarios"}));
+		comboBox_7.setBounds(599, 207, 512, 20);
+		add(comboBox_7);
+		
+		JComboBox comboBox_8 = new JComboBox();
+		comboBox_8.setModel(new DefaultComboBoxModel(new String[] {"atribuye la responsabilidad del incumplimiento a los culpables respectivos", "realiza las actividades ajenas a su responsabilidad para cumplir lo establecido"}));
+		comboBox_8.setBounds(599, 232, 512, 20);
+		add(comboBox_8);
+		
+		JComboBox comboBox_9 = new JComboBox();
+		comboBox_9.setModel(new DefaultComboBoxModel(new String[] {"No", "Si"}));
+		comboBox_9.setBounds(599, 257, 512, 20);
+		add(comboBox_9);
+		
+		JComboBox comboBox_10 = new JComboBox();
+		comboBox_10.setModel(new DefaultComboBoxModel(new String[] {"utilizar a otros", "identificarse con otros"}));
+		comboBox_10.setBounds(599, 285, 512, 20);
+		add(comboBox_10);
+		
+		JComboBox comboBox_11 = new JComboBox();
+		comboBox_11.setModel(new DefaultComboBoxModel(new String[] {"interactuas con pocos, solo con tus conocidos", "interactuas con varios, incluso con los que no conoces"}));
+		comboBox_11.setBounds(599, 311, 512, 20);
+		add(comboBox_11);
+		
+		JComboBox comboBox_12 = new JComboBox();
+		comboBox_12.setModel(new DefaultComboBoxModel(new String[] {"Viven el dia a dia", "Tienen un proposito a futuro claro de vida"}));
+		comboBox_12.setBounds(599, 339, 512, 20);
+		add(comboBox_12);
+		
+		JComboBox comboBox_13 = new JComboBox();
+		comboBox_13.setModel(new DefaultComboBoxModel(new String[] {"Un presente vivido", "Un futuro prometedor"}));
+		comboBox_13.setBounds(599, 364, 512, 20);
+		add(comboBox_13);
+		
+		JComboBox comboBox_14 = new JComboBox();
+		comboBox_14.setModel(new DefaultComboBoxModel(new String[] {"No", "Si"}));
+		comboBox_14.setBounds(599, 389, 512, 20);
+		add(comboBox_14);
+		
+		JComboBox comboBox_15 = new JComboBox();
+		comboBox_15.setModel(new DefaultComboBoxModel(new String[] {"espera a que alguien mas conteste", "se apura por llegar primero y contestar"}));
+		comboBox_15.setBounds(599, 414, 512, 20);
+		add(comboBox_15);
+		
+		JComboBox comboBox_16 = new JComboBox();
+		comboBox_16.setModel(new DefaultComboBoxModel(new String[] {"No", "Si"}));
+		comboBox_16.setBounds(599, 439, 512, 20);
+		add(comboBox_16);
+		
+		JComboBox comboBox_17 = new JComboBox();
+		comboBox_17.setModel(new DefaultComboBoxModel(new String[] {"Si, estoy bien donde estoy", "No, quiero algo mejor"}));
+		comboBox_17.setBounds(599, 464, 512, 20);
+		add(comboBox_17);
+		
+		JComboBox comboBox_18 = new JComboBox();
+		comboBox_18.setModel(new DefaultComboBoxModel(new String[] {"Es criterioso con el cliente y le realiza la consulta sabiendo que esto es en beneficio de la empresa", "Le pide que siga el conducto regular, ya que esto ayuda a consolidar la empresa"}));
+		comboBox_18.setBounds(599, 489, 512, 20);
+		add(comboBox_18);
 	}
 }
