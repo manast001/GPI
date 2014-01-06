@@ -163,7 +163,7 @@ public class DataPanel extends JPanel {
 
 	public List<List<String>> getData()
 	{
-		List<String> data=new ArrayList<String>();
+		List<String> data=new ArrayList<String>(),data1=new ArrayList<String>();
 		List<List<String>> datas=new ArrayList<List<String>>(); 
 		SpinnerNumberModel model=(SpinnerNumberModel) this.dataField_sonsNumber.getModel();
 		
@@ -180,15 +180,14 @@ public class DataPanel extends JPanel {
 		
 		
 		datas.add(data);
-		data.clear();
 		
-		data.add(this.dataField_Education.getSelectedItem().toString());
 		
-		data.add(this.dataField_Computer.getSelectedItem().toString());
-		data.add(this.dataField_charge.getSelectedItem().toString());
+		data1.add(this.dataField_Education.getSelectedItem().toString());
+		
+		data1.add(this.dataField_Computer.getSelectedItem().toString());
+		data1.add(this.dataField_charge.getSelectedItem().toString());
 		
 		datas.add(data);
-		data.clear();
 		return datas;
 	}
 }
