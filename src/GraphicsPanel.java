@@ -1,86 +1,119 @@
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.List;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.DefaultListModel;
 import javax.swing.JPanel;
+import javax.swing.JEditorPane;
+import javax.swing.JList;
+import javax.swing.AbstractListModel;
 
 
-public class ButtonListener implements ActionListener {
-        
-        private Postulante postulante;
-        private JButton button;
-        private int seccion;
-        private Interfaz frame;
-        private QuestionXYPanel xyPanel;
-        private StrategicPanel sPanel;
-        private TacticPanel tPanel;
-        private OperationalPanel oPanel;
-        private GraphicsPanel gpanel;
-        
-        
-        public ButtonListener(Postulante postulante,JButton button,int seccion,Interfaz frame)
-        {
-                this.button=button;
-                this.postulante=postulante;
-                this.seccion=seccion;
-                this.frame=frame;
-        }
-        
-        @Override
-        public void actionPerformed(ActionEvent e) {
-                
-        		if(this.seccion==0)
-        		{
-        			this.postulante.setData(this.frame.dPanel.getData());
-        		}
-        	
-        		this.frame.tabbedPane.removeAll();
-                switch(this.seccion)
-                {
-                
-                        case 0:
-                                this.button.setText("siguiente");
-                                this.frame.tabbedPane.addTab("Preguntas Iniciales",(JPanel) new QuestionXYPanel(this.postulante));
-                                break;
-                        case 1:
-                                this.postulante.caculateXY();
-                                
-                                if(this.postulante.getY()>=80)
-                                {
-                                        
-                                        this.frame.tabbedPane.addTab("Preguntas Finales",(JPanel) new StrategicPanel(this.postulante));
-                                        postulante.setRol("Estrategico");
-                                }else
-                                {
-                                        if(this.postulante.getY()<80 && this.postulante.getY()>=50)
-                                        {
-                                                this.frame.tabbedPane.addTab("Preguntas Finales",(JPanel) new TacticPanel(this.postulante));
-                                                postulante.setRol("Tactico");
-                                        }else
-                                        {
-                                                this.frame.tabbedPane.addTab("Preguntas Finales",new OperationalPanel(this.postulante));
-                                                postulante.setRol("Operacional");
-                                        }
-                                        
-                                }
-                                this.button.setText("Finalizar");
-                                break;
-                        case 2:
-                        		gpanel=new GraphicsPanel(this.postulante,new Cargo());
-                                this.frame.tabbedPane.addTab("Resultados Finales",gpanel);
-                                gpanel.setData();
-                                this.button.setText("Reiniciar");
-                                break;
-                                default:
-                                        this.button.setText("Comenzar");
-                                        this.seccion=-1;
-                                        this.frame.reinicializate();
-                                        break;
-                }
-                
-                this.seccion++;
-                
-        }
 
+public class GraphicsPanel extends JPanel {
+	private Postulante postulante;
+	private Cargo cargo;
+	private JList datos;
+	private JList resultados;
+	private JList observaciones;
+	private DefaultListModel model;
+
+	
+	/**
+	 * Private Metod
+	 */
+	/**
+	 * Create the panel.
+	 */
+	public GraphicsPanel(Postulante postulante, Cargo cargo ) {
+		setLayout(null);
+		
+		this.postulante=postulante;
+		this.cargo=cargo;
+		
+		datos = new JList();
+		datos.setModel(new DefaultListModel() {
+			String[] values = new String[] {"Datos"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		datos.setBounds(10, 60, 401, 298);
+		add(datos);
+		
+	   resultados = new JList();
+		resultados.setModel(new DefaultListModel() {
+			String[] values = new String[] {"Resultados"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		resultados.setBounds(421, 60, 424, 298);
+		add(resultados);
+		
+		observaciones = new JList();
+		observaciones.setModel(new DefaultListModel() {
+			String[] values = new String[] {"Observaciones"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		observaciones.setBounds(10, 369, 835, 223);
+		add(observaciones);
+	}
+	
+	private void setResultados()
+	{
+		List<String> data=cargo.comparate(postulante.getResponse(), postulante.getRol());
+		model=(DefaultListModel<String>) resultados.getModel();
+		
+		if(data==null)
+		{
+			model.addElement("No se han encontrado coincidencias");
+		}else
+		{
+			for(int i =0;i<data.size();i++)
+			{
+				model.addElement(data.get(i));
+			}
+		}
+	}
+	
+	private void setDatos()
+	{
+		model=(DefaultListModel<String>) datos.getModel();
+		
+		model.addElement("Edad: "+ postulante.getAge());
+		model.addElement("Nivel Computacional: "+ postulante.getNivelComputacional());
+		model.addElement("Nivel Educativo: " + postulante.getNivelEducacional());
+		model.addElement("Porcentaje X=" + postulante.getX()+"%");
+		model.addElement("Porcentaje Y=" + postulante.getY()+"%");
+		model.addElement("Rol Optimo: " + postulante.getRol());
+		
+	}
+	
+	private void setObservaciones()
+	{
+		model=(DefaultListModel<String>) observaciones.getModel();
+		if(postulante.getAge()<18)
+			model.addElement("El postulante es menor a 18 años");
+		if(postulante.getNivelComputacional().equals("Basica"))
+			model.addElement("Se debe realizar una capacitacion en computacion al postulante");
+		if(postulante.getNivelComputacional().equals("Basica") || postulante.getNivelComputacional().equals("media"))
+			model.addElement("El postulante solo puede acceder a un maximo de cargo tactico");
+		
+	}
+	
+	public void setData()
+	{
+		this.setDatos();
+		this.setResultados();
+	}
 }
