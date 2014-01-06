@@ -46,6 +46,7 @@ public class Cargo {
 	public List<String> comparate(List<Integer> postulante,String rol)
 	{
 		List<String> result=new ArrayList<String>();
+		List<Integer> result;
 		
 		switch(rol)
 		{
@@ -54,6 +55,7 @@ public class Cargo {
 			for(int i=0;i<this.estrategico.size();i++)
 			{
 				
+				for(int j=0;j<)
 			}
 			break;
 		
