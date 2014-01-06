@@ -32,7 +32,7 @@ public class StrategicPanel extends JPanel {
 		lblUstedCree.setBounds(10, 86, 76, 14);
 		panel.add(lblUstedCree);
 		
-		JLabel lblAUsted = new JLabel("5. A usted, le motiva m\u00E1s");
+		JLabel lblAUsted = new JLabel("<html>5. A usted, le motiva m&aacute;s</html>");
 		lblAUsted.setBounds(10, 111, 122, 14);
 		panel.add(lblAUsted);
 		
@@ -44,15 +44,15 @@ public class StrategicPanel extends JPanel {
 		lblNewLabel_1.setBounds(10, 161, 333, 14);
 		panel.add(lblNewLabel_1);
 		
-		JLabel lblEnUna = new JLabel("8. En una competencia a usted le importa m\u00E1s");
+		JLabel lblEnUna = new JLabel("<html>8. En una competencia a usted le importa m&aacute;1s</html>");
 		lblEnUna.setBounds(10, 186, 243, 14);
 		panel.add(lblEnUna);
 		
-		JLabel lblNewLabel_2 = new JLabel("9. Le atraen m\u00E1s la personas que");
+		JLabel lblNewLabel_2 = new JLabel("<html>9. Le atraen m&aacute;s la personas que</html>");
 		lblNewLabel_2.setBounds(10, 211, 243, 14);
 		panel.add(lblNewLabel_2);
 		
-		JLabel lblSiLe = new JLabel("10. Si le dieran a escoger un cargo usted elegir\u00EDa");
+		JLabel lblSiLe = new JLabel("<html>10. Si le dieran a escoger un cargo usted elegir&iacute;a</html>");
 		lblSiLe.setBounds(10, 236, 180, 14);
 		panel.add(lblSiLe);
 		
@@ -64,11 +64,11 @@ public class StrategicPanel extends JPanel {
 		lblUnCliente.setBounds(10, 291, 401, 14);
 		panel.add(lblUnCliente);
 		
-		JLabel lblCuandoEl = new JLabel("13. Cuando el tel\u00E9fono suena, usted");
+		JLabel lblCuandoEl = new JLabel("<html>13. Cuando el tel&eacute;fono suena, usted</html>");
 		lblCuandoEl.setBounds(10, 316, 232, 14);
 		panel.add(lblCuandoEl);
 		
-		JLabel lblhaDivagado = new JLabel("14. \u00BFHa divagado alguna vez con un plan de vida en el \u00E1mbito profesional?");
+		JLabel lblhaDivagado = new JLabel("<html>14. \u00BFHa divagado alguna vez con un plan de vida en el &aacute;mbito profesional?</html>");
 		lblhaDivagado.setBounds(10, 341, 416, 14);
 		panel.add(lblhaDivagado);
 		
@@ -76,11 +76,11 @@ public class StrategicPanel extends JPanel {
 		lblEnUna_1.setBounds(10, 366, 272, 14);
 		panel.add(lblEnUna_1);
 		
-		JLabel lblEsMs = new JLabel("16. Es m\u00E1s dif\u00EDcil para ti");
+		JLabel lblEsMs = new JLabel("<html>16. Es m&aacute;s dif&iacute;cil para ti</html>");
 		lblEsMs.setBounds(10, 391, 243, 14);
 		panel.add(lblEsMs);
 		
-		JLabel lblTeAtraen = new JLabel("17. Te atraen m\u00E1s la personas que");
+		JLabel lblTeAtraen = new JLabel("<html>17. Te atraen m&aacute;s la personas que</html>");
 		lblTeAtraen.setBounds(10, 416, 243, 14);
 		panel.add(lblTeAtraen);
 		
@@ -88,7 +88,7 @@ public class StrategicPanel extends JPanel {
 		lblseSiente.setBounds(10, 441, 333, 14);
 		panel.add(lblseSiente);
 		
-		JLabel lblEsMs_1 = new JLabel("19. Es m\u00E1s com\u00FAn que conf\u00EDes en\r\n");
+		JLabel lblEsMs_1 = new JLabel("<html>19. Es m&aacute;s com&uacute;n que conf&iacute;es en\r\n</html>");
 		lblEsMs_1.setBounds(10, 466, 333, 14);
 		panel.add(lblEsMs_1);
 		
@@ -96,7 +96,7 @@ public class StrategicPanel extends JPanel {
 		lblUstedSuele.setBounds(10, 491, 333, 14);
 		panel.add(lblUstedSuele);
 		
-		JLabel lblQueCaracteristica = new JLabel("21. Que caracteristica usted admira m\u00E1s\r\n");
+		JLabel lblQueCaracteristica = new JLabel("<html>21. Que caracteristica usted admira m&aacute;s\r\n</html>");
 		lblQueCaracteristica.setBounds(10, 516, 333, 14);
 		panel.add(lblQueCaracteristica);
 		
@@ -104,11 +104,11 @@ public class StrategicPanel extends JPanel {
 		lblSuNivel.setBounds(10, 541, 333, 14);
 		panel.add(lblSuNivel);
 		
-		JLabel lblDeberaUno = new JLabel("23. Deber\u00EDa uno dejar que los eventos ocurra\r\nn");
+		JLabel lblDeberaUno = new JLabel("<html>23. Deber&eacute;a uno dejar que los eventos ocurra\r\nn</html>");
 		lblDeberaUno.setBounds(10, 566, 333, 14);
 		panel.add(lblDeberaUno);
 		
-		JLabel lblQueEs = new JLabel("24. Que es m\u00E1s admirable");
+		JLabel lblQueEs = new JLabel("<html>24. Que es m&aacute;s admirable</html>");
 		lblQueEs.setBounds(10, 591, 333, 14);
 		panel.add(lblQueEs);
 		
