@@ -187,7 +187,7 @@ public class DataPanel extends JPanel {
 		data1.add(this.dataField_Computer.getSelectedItem().toString());
 		data1.add(this.dataField_charge.getSelectedItem().toString());
 		
-		datas.add(data);
+		datas.add(data1);
 		return datas;
 	}
 }
