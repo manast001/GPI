@@ -34,6 +34,83 @@ public class Interfaz {
 			}
 		});
 	}
+	public void consulta(){
+		List<Integer> lista =new ArrayList<Integer>();
+		List<String> opera =new ArrayList<String>();
+		//nivel operacional
+		opera.add("Vendedor");
+		opera.add("Programador");
+		opera.add("Secretaria");
+		opera.add("Recepcionista");
+		opera.add("Bodega");
+		opera.add("Guardia");
+		double coincidenciaVendedor=66.6;
+		double coincidenciaProgramador=71.4;
+		double coincidenciaSecretaria=62.5;
+		double coincidenciaRecepcionista=57.1;
+		double coincidenciaBodega=66.6;
+		double coincidenciaGuardia=55.5;
+		//vendedor
+		lista.add(4);
+		lista.add(8);
+		lista.add(3);
+		lista.add(14);
+		lista.add(16);
+		lista.add(35);
+		cargo.addNewOperational(lista,(int) coincidenciaVendedor, opera.get(0));
+		//programador
+		lista=new ArrayList<Integer>();
+		lista.add(1);
+		lista.add(7);
+		lista.add(2);
+		lista.add(23);
+		lista.add(15);
+		lista.add(37);
+		lista.add(39);
+		cargo.addNewOperational(lista,(int) coincidenciaProgramador, opera.get(1));
+		//Secretaria
+		lista=new ArrayList<Integer>();
+		lista.add(8);
+		lista.add(13);
+		lista.add(2);
+		lista.add(15);
+		lista.add(16);
+		lista.add(38);
+		lista.add(35);
+		lista.add(39);
+		cargo.addNewOperational(lista,(int) coincidenciaSecretaria, opera.get(2));
+		//Recepcionista
+		lista=new ArrayList<Integer>();
+		lista.add(4);
+		lista.add(8);
+		lista.add(13);
+		lista.add(2);
+		lista.add(14);
+		lista.add(16);
+		lista.add(39);
+		cargo.addNewOperational(lista,(int) coincidenciaRecepcionista, opera.get(3));
+		//Bodega
+		lista=new ArrayList<Integer>();
+		lista.add(2);
+		lista.add(7);
+		lista.add(33);
+		lista.add(34);
+		lista.add(39);
+		lista.add(35);
+		cargo.addNewOperational(lista,(int) coincidenciaBodega, opera.get(4));
+		//Guardia
+		lista=new ArrayList<Integer>();
+		lista.add(7);
+		lista.add(12);
+		lista.add(13);
+		lista.add(34);
+		lista.add(18);
+		lista.add(25);
+		lista.add(39);
+		lista.add(35);
+		lista.add(38);
+		cargo.addNewOperational(lista,(int) coincidenciaGuardia, opera.get(5));
+	}
 
 	/**
 	 * Create the application.
