@@ -12,6 +12,11 @@ public class ButtonListener implements ActionListener {
 	private JButton button;
 	private int seccion;
 	private Interfaz frame;
+	private QuestionXYPanel xyPanel;
+	private StrategicPanel sPanel;
+	private TacticPanel tPanel;
+	private OperationalPanel oPanel;
+	
 	
 	public ButtonListener(Postulante postulante,JButton button,int seccion,Interfaz frame)
 	{
@@ -24,7 +29,7 @@ public class ButtonListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		this.frame.tabbedPane.remove(0);
+		
 		switch(this.seccion)
 		{
 			
