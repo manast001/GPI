@@ -330,7 +330,7 @@ public class Interfaz {
 		frame.getContentPane().setLayout(null);
 		
 		this.seccion=0;
-		
+		this.cargo=new Cargo();
 		this.postulante=new Postulante();
 	}
 }
