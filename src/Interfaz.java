@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.TitledBorder;
+import javax.swing.JButton;
 
 
 public class Interfaz {
@@ -47,7 +48,12 @@ public class Interfaz {
 		initialize();
 		
 		this.insertPanel("Datos",(JPanel) new DataPanel());
+		
+		JButton btnComenzar = new JButton("Comenzar");
+		btnComenzar.setBounds(578, 525, 91, 23);
+		frame.getContentPane().add(btnComenzar);
 		this.insertPanel("Graficos",(JPanel) new GraphicsPanel());
+		this.insertPanel("Cuestionario",(JPanel) new QuestionXYPanel(new Postulante()));
 	}
 	
 	/**
@@ -55,7 +61,7 @@ public class Interfaz {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 685, 545);
+		frame.setBounds(100, 100, 685, 586);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
