@@ -5,12 +5,18 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.TitledBorder;
 import javax.swing.JButton;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.RowSpec;
+import com.jgoodies.forms.factories.FormFactory;
 
 
 public class Interfaz {
 
 	private JFrame frame;
-	private JTabbedPane principalPanel;
+	private int seccion;
+	private Postulante postulante;
+	private JPanel panel_1;
 	/**
 	 * Launch the application.
 	 */
@@ -26,20 +32,6 @@ public class Interfaz {
 			}
 		});
 	}
-	
-	/**
-	 * Public Method 
-	 */
-	
-	public void insertPanel(String tittle,JPanel panel)
-	{
-		principalPanel.addTab(tittle,panel);
-	}
-	
-	public void removePanelByIndex(int index)
-	{
-		principalPanel.removeTabAt(index);
-	}
 
 	/**
 	 * Create the application.
@@ -47,13 +39,23 @@ public class Interfaz {
 	public Interfaz() {
 		initialize();
 		
-		this.insertPanel("Datos",(JPanel) new DataPanel());
+		panel_1 = new JPanel();
+		panel_1.setBounds(0, 0, 717, 502);
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		DataPanel dataPanel = new DataPanel();
+		dataPanel.setBounds(358, 5, 1, 1);
+		DataPanel dataPanel_1 = new DataPanel();
+		dataPanel_1.setBounds(0, 0, 717, 502);
+		panel_1.add((JPanel) dataPanel_1);
 		
 		JButton btnComenzar = new JButton("Comenzar");
-		btnComenzar.setBounds(553, 530, 152, 23);
+		btnComenzar.setBounds(553, 514, 152, 23);
+		btnComenzar.addActionListener(new ButtonListener(this.postulante,btnComenzar,this.seccion,this.panel_1));
 		frame.getContentPane().add(btnComenzar);
-		this.insertPanel("Graficos",(JPanel) new GraphicsPanel());
-		this.insertPanel("Cuestionario",(JPanel) new QuestionXYPanel(new Postulante()));
+		
+		
 	}
 	
 	/**
@@ -65,10 +67,9 @@ public class Interfaz {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		principalPanel = new JTabbedPane(JTabbedPane.TOP);
-		principalPanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		principalPanel.setBounds(0, 0, 711, 514);
-		frame.getContentPane().add(principalPanel);
+		this.seccion=0;
+		
+		this.postulante=new Postulante();
 	}
 	
 	

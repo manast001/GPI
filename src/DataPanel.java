@@ -33,13 +33,14 @@ public class DataPanel extends JPanel {
 	 * Create the panel.
 	 */
 	public DataPanel() {
+		setBackground(Color.LIGHT_GRAY);
 		
-		this.setBounds(0, 0, 635, 459);
+		this.setBounds(0, 0, 720, 458);
 		setLayout(null);
 		
 		JPanel userDataPanel = new JPanel();
 		userDataPanel.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 255), 1, true), "Datos Personales", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		userDataPanel.setBounds(12, 22, 611, 152);
+		userDataPanel.setBounds(12, 22, 691, 152);
 		add(userDataPanel);
 		userDataPanel.setLayout(null);
 		
@@ -52,23 +53,23 @@ public class DataPanel extends JPanel {
 		userDataPanel.add(rutLabel);
 		
 		JLabel apellidoPLabel = new JLabel("Apellido Paterno");
-		apellidoPLabel.setBounds(12, 80, 108, 15);
+		apellidoPLabel.setBounds(12, 80, 143, 15);
 		userDataPanel.add(apellidoPLabel);
 		
 		JLabel apellidoMLabel = new JLabel("Apellido Materno");
-		apellidoMLabel.setBounds(12, 106, 108, 15);
+		apellidoMLabel.setBounds(12, 106, 143, 15);
 		userDataPanel.add(apellidoMLabel);
 		
 		JLabel nacimientoLabel = new JLabel("Fecha de Nacimiento ");
-		nacimientoLabel.setBounds(268, 28, 121, 15);
+		nacimientoLabel.setBounds(268, 28, 167, 15);
 		userDataPanel.add(nacimientoLabel);
 		
 		JLabel estadoCivilLabel = new JLabel("Estado Civil");
-		estadoCivilLabel.setBounds(268, 55, 76, 15);
+		estadoCivilLabel.setBounds(268, 55, 121, 15);
 		userDataPanel.add(estadoCivilLabel);
 		
 		JLabel cantidadHijosLabel = new JLabel("N\u00B0 de Hijos");
-		cantidadHijosLabel.setBounds(268, 106, 61, 15);
+		cantidadHijosLabel.setBounds(475, 55, 109, 15);
 		userDataPanel.add(cantidadHijosLabel);
 		
 		dataField_Rut = new JTextField();
@@ -83,51 +84,51 @@ public class DataPanel extends JPanel {
 		
 		dataField_SurnameP = new JTextField();
 		dataField_SurnameP.setColumns(10);
-		dataField_SurnameP.setBounds(130, 77, 128, 20);
+		dataField_SurnameP.setBounds(157, 78, 128, 20);
 		userDataPanel.add(dataField_SurnameP);
 		
 		dataField_SurnameM = new JTextField();
 		dataField_SurnameM.setColumns(10);
-		dataField_SurnameM.setBounds(130, 103, 128, 20);
+		dataField_SurnameM.setBounds(157, 104, 128, 20);
 		userDataPanel.add(dataField_SurnameM);
 		
 		JSpinner dataField_Date = new JSpinner();
 		dataField_Date.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		dataField_Date.setModel(new SpinnerDateModel(new Date(1388718000000L), null, null, Calendar.DAY_OF_YEAR));
-		dataField_Date.setBounds(407, 25, 143, 20);
+		dataField_Date.setBounds(441, 26, 143, 20);
 		userDataPanel.add(dataField_Date);
 		
 		JSpinner dataField_sonsNumber = new JSpinner();
 		dataField_sonsNumber.setModel(new SpinnerNumberModel(0, 0, 10, 1));
-		dataField_sonsNumber.setBounds(347, 103, 76, 20);
+		dataField_sonsNumber.setBounds(572, 53, 76, 20);
 		userDataPanel.add(dataField_sonsNumber);
 		
 		JComboBox dataField_civilState = new JComboBox();
 		dataField_civilState.setModel(new DefaultComboBoxModel(new String[] {"Soltero", "Casado", "Separado", "Divorciado", "Viudo"}));
-		dataField_civilState.setBounds(359, 50, 179, 25);
+		dataField_civilState.setBounds(366, 50, 102, 25);
 		userDataPanel.add(dataField_civilState);
 		
 		JPanel chargeDataPanel = new JPanel();
 		chargeDataPanel.setBorder(new TitledBorder(new LineBorder(new Color(0, 0, 255)), "Datos Profesionales", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		chargeDataPanel.setBounds(12, 186, 611, 225);
+		chargeDataPanel.setBounds(12, 186, 691, 225);
 		add(chargeDataPanel);
 		chargeDataPanel.setLayout(null);
 		
 		JLabel educacionLabel = new JLabel("Nivel Educacional");
-		educacionLabel.setBounds(12, 47, 99, 16);
+		educacionLabel.setBounds(12, 47, 155, 16);
 		chargeDataPanel.add(educacionLabel);
 		
 		JComboBox dataField_Education = new JComboBox();
-		dataField_Education.setBounds(139, 45, 121, 20);
+		dataField_Education.setBounds(185, 46, 155, 20);
 		chargeDataPanel.add(dataField_Education);
 		dataField_Education.setModel(new DefaultComboBoxModel(new String[] {"Basica", "Media", "Superior"}));
 		
 		JLabel computacionPlz = new JLabel("Nivel Computacional");
-		computacionPlz.setBounds(12, 81, 121, 15);
+		computacionPlz.setBounds(12, 81, 155, 15);
 		chargeDataPanel.add(computacionPlz);
 		
 		JComboBox dataField_Computer = new JComboBox();
-		dataField_Computer.setBounds(139, 78, 133, 20);
+		dataField_Computer.setBounds(185, 78, 155, 20);
 		chargeDataPanel.add(dataField_Computer);
 		dataField_Computer.setModel(new DefaultComboBoxModel(new String[] {"Basico", "Medio", "Avanzado", "Experto"}));
 		
@@ -138,30 +139,8 @@ public class DataPanel extends JPanel {
 		JComboBox dataField_charge = new JComboBox();
 		dataField_charge.setModel(new DefaultComboBoxModel(new String[] {"Nuevo Postulante", "Cargo plz"}));
 		dataField_charge.setMaximumRowCount(20);
-		dataField_charge.setBounds(139, 113, 133, 25);
+		dataField_charge.setBounds(185, 113, 155, 25);
 		chargeDataPanel.add(dataField_charge);
-		
-		JList dataField_WishCharge = new JList();
-		dataField_WishCharge.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Hola ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
-		dataField_WishCharge.setBounds(331, 46, 252, 167);
-		chargeDataPanel.add(dataField_WishCharge);
-		
-		JLabel lblCargoAlQue = new JLabel("Cargo al que se desea postular");
-		lblCargoAlQue.setBounds(331, 18, 190, 16);
-		chargeDataPanel.add(lblCargoAlQue);
-		
-		JButton startButton = new JButton("Comenzar");
-		startButton.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
-		startButton.setBounds(506, 423, 117, 25);
-		add(startButton);
 
 	}
 }
